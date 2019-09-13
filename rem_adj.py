@@ -9,13 +9,12 @@ test3 = []
 
 def remove_adjacent(lists):
     n=0
-    for numb in lists:
-        if n < len(lists):
-            while lists[n] == lists[n+1]:
-                lists.pop(n+1)
-                print(lists)
+    while n+1 < len(lists):
+        if lists[n] == lists[n+1]:
+            lists.pop(n+1)
         else:
             n=n+1
+    print(lists)
 
 
 def main():
@@ -25,6 +24,9 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+
 
 
 
