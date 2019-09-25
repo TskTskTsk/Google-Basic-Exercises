@@ -44,18 +44,23 @@ d={}
 def dict_make(filename):
     with open(filename) as f:
         f_actual = f.read()
-        print(f_actual)
         s_f = f_actual.split()
         for word in s_f:
             if word in d:
                 d[word]=d[word]+1
             else:
                 d[word]=1
-    print(d)
 
+def Last(tup): return tup[-1]
 
 def print_words(filename):
-    for k in d.keys(): print(k, ":", d[k])
+    for k in sorted(d.keys()): print(k, ":", d[k])
+
+def print_top(filename):
+    tops = sorted(list(d.items()), reverse=True, key=Last)[:19]
+    print(tops)
+    for n in tops:
+        print(n[0], n[1])
 
 
 
@@ -80,4 +85,4 @@ def main():
         sys.exit(1)
 
 if __name__ == '__main__':
-  main()
+    main()
