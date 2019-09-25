@@ -60,7 +60,7 @@ def print_top(filename):
     tops = sorted(list(d.items()), reverse=True, key=Last)[:19]
     print(tops)
     for n in tops:
-        print(n[0], n[1])
+        print(n[0], "->", n[1])
 
 
 
